@@ -3,17 +3,20 @@ const rotas = require("./routes");
 const startDB = require("./Loaders/mongodb");
 
 const app = express();
+
 startDB();
 
 app.use(express.json());
+
 app.use(rotas);
+
+app.listen(8000, () => console.log("Servidor Rodando!"));
 
 //app.use(express.urlencoded({exten: true}));
 //app.use(express.json());
 //app.use(cors());
 
 
-app.listen(8000, () => console.log("Servidor Rodando!"));
 
 /*
 app.use("*",(req, res) => {
