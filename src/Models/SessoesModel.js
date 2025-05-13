@@ -1,9 +1,9 @@
 const { Timestamp } = require("mongodb");
-const moongose = require("mongoose");
+const mongoose = require("mongoose");
 
-const Schema = Mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const SessoesSchema =new Schema({
+const SessoesSchema = new Schema({
     id_usuario : {
         type : Schema.Type.ObjectId,
         ref : 'usuarios'
@@ -12,6 +12,6 @@ const SessoesSchema =new Schema({
     Timestamp : true
 })
 
-const SessoesModel = moongoose.model('sessoes',SessoesSchema);
+const SessoesModel = mongoose.model('sessoes',SessoesSchema);
 
-module.exports = SessoesModel
+module.exports = SessoesModel;

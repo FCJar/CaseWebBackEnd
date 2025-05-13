@@ -1,8 +1,8 @@
-const startDB = require("mongodb");
+const startDB = require("./mongodb");
 
 class Loaders{
-    start(){
-        startDB();
+    async start(){
+        await startDB();
     }
 }
 

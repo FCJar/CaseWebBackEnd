@@ -1,6 +1,6 @@
-const moongose = require("mongoose");
+const mongoose = require("mongoose");
 
-const Schema = Mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const UsuarioSchema = new Schema({
     email : String,
@@ -10,6 +10,6 @@ const UsuarioSchema = new Schema({
     status : String
 }) 
 
-const UsuarioModel = Mongoose.model('usuarios', UsuarioSchema);
+const UsuarioModel = mongoose.model('usuarios', UsuarioSchema);
 
-module.exports = UsuarioModel
+module.exports = UsuarioModel;
