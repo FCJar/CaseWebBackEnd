@@ -2,9 +2,9 @@ const express = require("express");
 const rotas = require("./routes");
 const startDB = require("./Loaders/mongodb");
 
-const app = express();
-
 startDB();
+
+const app = express();
 
 app.use(express.json());
 
