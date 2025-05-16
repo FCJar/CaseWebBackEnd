@@ -14,22 +14,30 @@ class UsuarioControler  {
 
     }
 
-    update(req, res){
+    async update(req, res){
+        const { id } = req.params;
+
+        const usuario = await UsuarioModel.findByIdAndUpdate(id,req.body)
         
+        if(!usuario){
+            return res.status(404).json({"mensagem" : "Usuario não encontrado"});
+        }else{
+            return res.status(200).json({"mensagem" : "Usuario Atualizada com Sucesso"});
+        }
     }
 
     async delete(req, res){
 
         const { id } = req.params;
 
-        const usuarios = await UsuarioModel.findByIdAndDelete(id);
+        const usuario = await UsuarioModel.findByIdAndDelete(id);
         
-        if(!usuarios){
+        if(!usuario){
             return res.status(404).json({"mensagem" : "Usuario não encontrado"});
         }else{
-            return res.status(200).json({"mensagem" : "Usuario Deletado com Sucesso"});
+            return res.status(200).json({"mensagem" : "Dados de Usuario Deletado com Sucesso"});
         }
-
+        
 
     }
 }

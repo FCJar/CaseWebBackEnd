@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 
 const SessoesSchema = new Schema({
     id_usuario : {
-        type : Schema.Type.ObjectId,
+        type : Schema.Types.ObjectId,
         ref : 'usuarios'
     }
     },{
-    Timestamp : true
+    timestamps : true
 })
 
 const SessoesModel = mongoose.model('sessoes',SessoesSchema);
