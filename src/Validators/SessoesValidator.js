@@ -10,10 +10,10 @@ const create = validateRequest({
 
 const destroy = validateRequest({
     params: z.object({
-        id: z.custom(mongoose.isValidObjectId, "A id da sessão não é valida"),
+        id_usuario: z.custom(mongoose.isValidObjectId, "A id do ussuario não é valido"),
     }),
 })
-
+/*
 const update = validateRequest({
         body: z.object({
              id_usuario: z.custom(mongoose.isValidObjectId, "A id do usuario não é valida"),
@@ -22,10 +22,10 @@ const update = validateRequest({
             id: z.custom(mongoose.isValidObjectId, "A id não é valida"),
         }),
 })
-
+*/
 
 module.exports = {
     create,
     destroy,
-    update,
+    //update,
 }

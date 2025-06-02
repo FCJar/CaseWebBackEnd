@@ -25,10 +25,18 @@ UsuarioSchema.pre("save", async function (next) {
         const salt = await bcrypt.genSalt();
         const hash = await bcrypt.hash(user.senha, salt);
         user.senha = hash;
-        console.log({salt, hash});
+        //console.log({salt, hash});
     };
     next();
 });
+
+UsuarioSchema.pre("deleteOne", 
+    {document : true, query : false},
+    async function(){
+        const user = this;
+        return SessoesModel.deleteOne({ id_usuario : usuario_id});
+    }
+);
 
 const UsuarioModel = mongoose.model('usuarios', UsuarioSchema);
 
