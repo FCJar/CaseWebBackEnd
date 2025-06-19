@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 class AuthController{
-    async login(req,res) {
+    async login(req, res) {
         try{
             const { email, senha } = req.body;
             const usuarioEncontrado = await UsuarioModel.findOne({ email}).select("+senha");
