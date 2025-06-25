@@ -3,7 +3,7 @@ function verificarUsuario(req, res, next){
     if(req.usuarioId !== usuarioId){
         return res.status(401).json("Operação não Autorizada");
     }
-    console.log({ usuarioId: req.usuarioID });
+    //console.log({ usuarioId: req.usuarioID });
     next();
 }
 
